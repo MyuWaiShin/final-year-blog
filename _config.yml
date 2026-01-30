@@ -10,12 +10,13 @@ lang: en
 timezone: Europe/London
 
 # jekyll-seo-tag settings
-title: Final Year Project - Recovery Strategies for Robotic Manipulation
-tagline: Building Robust Robotic Systems
+title: Failure Detection and Recovery in Robotic Pick-and-Place Systems
+tagline: Building Intelligent Recovery Mechanisms for Robotic Manipulation
 description: >-
-  This research systematically evaluates failure recovery strategies in robotic pick-and-place operations. 
-  Controlled experiments are conducted using a UR10 manipulator with gripper to quantify recovery effectiveness 
-  across different failure modes.
+  This research investigates failure detection and recovery strategies in robotic pick-and-place operations
+  using a hybrid approach combining rule-based recovery with learning-based grasp refinement. 
+  Systematic experiments with a UR10 manipulator quantify recovery effectiveness across different failure modes,
+  building a comprehensive failure dataset for future research.
 
 # Fill in the protocol & hostname for your site
 url: "https://myuwaishin.github.io"
@@ -34,7 +35,7 @@ theme_mode: # [light | dark]
 
 cdn:
 
-avatar: /assets/img/avatar.jpg
+avatar: /assets/img/avatar.png
 
 social_preview_image:
 

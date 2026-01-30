@@ -1,4 +1,60 @@
 ---
-layout: home
-# Index page
+layout: page
 ---
+
+<div style="text-align: center; margin: 2rem 0;">
+  <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Failure Detection and Recovery in Robotic Pick-and-Place Systems</h1>
+  <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Building intelligent recovery mechanisms for robotic manipulation</p>
+</div>
+
+<div style="max-width: 800px; margin: 0 auto;">
+  
+  <h2>What Happens When a Robot Fails?</h2>
+  
+  <p>This research tackles a critical challenge in industrial automation: <strong>what happens when a robotic arm fails to grasp an object?</strong></p>
+  
+  <p>This project investigates intelligent recovery strategies that enable robots to detect failures, understand what went wrong, and autonomously recover, enabling the robot to correctly resume its operation or proceed without a system halt.</p>
+
+  <div style="margin: 2rem 0; text-align: center;">
+    <img src="{{ '/assets/img/robot-placeholder.jpg' | relative_url }}" alt="UR10 Robot Setup" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;"><em>UR10 manipulator with gripper and vision system</em></p>
+  </div>
+
+
+  <h2>Why This Matters</h2>
+  
+  <p>In automated manufacturing, every failure that requires human intervention means production delays, increased operational costs, and reduced system reliability. Intelligent recovery mechanisms can significantly improve the autonomy and efficiency of robotic systems.</p>
+
+  <hr style="margin: 3rem 0;">
+
+  <div style="text-align: center; margin: 3rem 0;">
+    <h3>Learn More</h3>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+      <a href="{{ '/about/' | relative_url }}" style="padding: 0.75rem 1.5rem; background: #0366d6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">About the Project</a>
+      <a href="{{ '/weekly-progress/' | relative_url }}" style="padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">Weekly Progress</a>
+      <a href="{{ '/resources/' | relative_url }}" style="padding: 0.75rem 1.5rem; background: #6f42c1; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">Resources</a>
+    </div>
+  </div>
+
+  <h2>Project Components</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+    
+    <div style="padding: 1.5rem; border: 1px solid #e1e4e8; border-radius: 8px;">
+      <h4>Hardware</h4>
+      <p style="margin: 0.5rem 0;">UR10 CB Series Manipulator, Gripper with force feedback, Depth camera for vision</p>
+    </div>
+
+    <div style="padding: 1.5rem; border: 1px solid #e1e4e8; border-radius: 8px;">
+      <h4>Software</h4>
+      <p style="margin: 0.5rem 0;">YOLO object detection, UR Python libraries, GraspNet grasp planning, URSim simulation</p>
+    </div>
+
+    <div style="padding: 1.5rem; border: 1px solid #e1e4e8; border-radius: 8px;">
+      <h4>Methodology</h4>
+      <p style="margin: 0.5rem 0;">Failure mode identification, Recovery strategy development, Data collection and analysis, Benchmarking experiments</p>
+    </div>
+
+  </div>
+
+</div>

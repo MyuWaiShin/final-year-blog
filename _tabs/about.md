@@ -13,7 +13,7 @@ order: 1
 **Student ID:** M00964135  
 **Programme:** BEng Mechatronics and Robotics Engineering  
 **Institution:** Middlesex University London  
-**Expected Graduation:** July 2025
+**Expected Graduation:** July 2026
 
 
 ## Contact

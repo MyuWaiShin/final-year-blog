@@ -21,7 +21,7 @@ During exploration, the agent checks in simulation if a task can be solved relia
 <div style="text-align: center;">
   <img src="/assets/img/recovery_chaining.png" alt="Recovery Chaining Concept" style="width: 90%;" />
   <p style="font-size: 0.85em; color: #6c757d; margin-top: 0.5em;">
-    <em>Visualizing Nominal Execution vs. Recovery Actions (Source: Research Reference)</em>
+    <em>Visualizing Nominal Execution vs. Recovery Actions (Source: <a href="https://arxiv.org/html/2410.13979v1">ArXiv: 2410.13979v1</a>)</em>
   </p>
 </div>
 

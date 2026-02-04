@@ -3,7 +3,7 @@ title: "Day 1: Getting Started with the Niryo NED2"
 date: 2026-01-26 04:17:00 +0000
 categories: [Project Updates, Hardware Testing]
 tags: [niryo, ned2, gripper, calibration]
-author: Myu Wai Shin
+author: myuwaishin
 pin: true
 ---
 
@@ -15,7 +15,8 @@ In this project, I am investigating failure detection and recovery methods for w
 
 I've split my project into three layers to keep things organized:
 
-![Project Pipeline](/final-year-blog/assets/img/project_pipeline.png)
+![Project Pipeline]({{ '/assets/img/project_pipeline.png' | relative_url }})
+_Flowchart created using [Miro](https://miro.com/app/dashboard/)_
 
 **1. Perception and Configuration**
 - Object detection and pose estimation

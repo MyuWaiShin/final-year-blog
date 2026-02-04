@@ -5,6 +5,7 @@ categories: [Project Updates, Hardware Testing]
 tags: [niryo, ned2, gripper, calibration]
 author: myuwaishin
 pin: true
+last_modified_at: false
 ---
 
 ## Follow Along
@@ -15,7 +16,7 @@ In this project, I am investigating failure detection and recovery methods for w
 
 I've split my project into three layers to keep things organized:
 
-![Project Pipeline]({{ '/assets/img/project_pipeline.png' | relative_url }})
+![Project Pipeline](/assets/img/project_pipeline.png)
 _Flowchart created using [Miro](https://miro.com/app/dashboard/)_
 
 **1. Perception and Configuration**

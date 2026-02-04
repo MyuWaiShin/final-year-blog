@@ -16,7 +16,8 @@ In this project, I am investigating failure detection and recovery methods for w
 
 I've split my project into three layers to keep things organized:
 
-![Project Pipeline](/final-year-blog/assets/img/project_pipeline.png)
+
+![Project Pipeline](/assets/img/project_pipeline.png)
 _Flowchart created using [Miro](https://miro.com/app/dashboard/)_
 
 **1. Perception and Configuration**

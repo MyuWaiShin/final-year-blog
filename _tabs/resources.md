@@ -27,6 +27,14 @@ This page contains useful tutorials, documentation, code repositories, and learn
 
 ---
 
+## Simulation & Software
+
+### PyBullet & URDFs
+- **[PyBullet Quick Start](https://github.com/bulletphysics/bullet3/tree/master)** - Physics engine for simulating robots
+- **[Niryo Ned2 URDF Documentation](https://niryorobotics.github.io/beta_ned_ros_doc/packages/high_level/niryo_robot_description.html)** - Official robot description package for ROS/Simulation
+
+---
+
 ## Computer Vision & Object Detection
 
 ### YOLO (You Only Look Once)

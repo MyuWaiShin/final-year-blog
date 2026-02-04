@@ -1,128 +1,104 @@
 ---
-title: "Project Kickoff: Failure Detection and Recovery in Robotic Pick-and-Place Systems"
+title: "Day 1: Getting Started with the Niryo NED2"
 date: 2026-01-26 04:17:00 +0000
-categories: [Project Updates, Planning]
-tags: [ur10, robotics, research, setup, methodology]
+categories: [Project Updates, Hardware Testing]
+tags: [niryo, ned2, gripper, calibration]
 author: Myu Wai Shin
 pin: true
 ---
 
-## Welcome to My Final Year Project!
+## Follow Along
 
-I'm excited to share my journey through this final year project, which focuses on a challenge that's been bugging me since I started working with robotic arms: **what happens when a robot fails to grasp something?**
+In this project, I am investigating failure detection and recovery methods for when a robotic arm fails to grasp an object. This blog documents my research, experiments, and findings along the way.
 
-Most of the time, the robot either keeps going like nothing happened (which causes problems later) or just stops and waits for someone to fix it. Neither option is great, especially in industrial settings where time is money.
+## Project Structure
 
-## The Big Question
+I've split my project into three layers to keep things organized:
 
-Here's what I'm trying to figure out: **Can we make robots smart enough to realize they've messed up and fix the problem themselves?**
+![Project Pipeline](/final-year-blog/assets/img/project_pipeline.png)
 
-This breaks down into three main questions:
-1. How does a robot know it failed to grab something?
-2. What exactly went wrong?
-3. How can it recover without human help?
+**1. Perception and Configuration**
+- Object detection and pose estimation
+- Camera-to-robot frame transformation (hand-eye calibration)
 
-## Why This Matters
+**2. Failure Detection**
 
-I've been reading about manufacturing facilities where a single robot failure can halt an entire production line. Workers have to stop what they're doing, walk over, figure out what went wrong, and manually fix it. This happens way more often than you'd think, and it's expensive.
+These are the failure types I'm looking into:
+- **Position error**: Did the gripper miss the object during the approach?
+- **Slips**: Did the object slide out during transport?
+- **Collisions**: Did the gripper bump into something?
 
-If robots could handle these failures on their own, companies could save time and money while making their automation more reliable. That's the goal here.
+How I'm planning to detect them:
+- **Gripper width feedback**: Can we tell if it actually picked something up?
+- **Tactile sensor**: Is the object still in the gripper throughout the movement?
+- **Visual sensor (depth camera)**: Was the object lifted and then dropped? (checking for changes in z-axis position)
 
-## The Approach: Hybrid Recovery
+**3. Recovery Methods**
+- How do we recover autonomously depending on the failure type?
+- How do we teach the robot to recover?
+- Which recovery method works best for which failure?
+- Compare the methods and do analysis
 
-After doing some initial research and testing with our UR10 arm, I've settled on what I'm calling a **hybrid approach**. Here's the idea:
+## What I Did on January 26th
 
-### Rule-Based Recovery (The Fast Response)
-For common failures that happen all the time—like the gripper slipping or the object shifting slightly—I'm building a set of predefined recovery procedures. Think of it like muscle memory: the robot recognizes the situation and immediately knows what to do.
+### Reading Documentation
 
-### Learning-Based Refinement (The Smart Adjustment)
-For more complex situations, I'm integrating **GraspNet**, which can predict alternative ways to grab an object. If the first attempt fails, the system can suggest different grasp poses to try. I'm also training a simple classifier to predict whether a particular grasp is likely to succeed or fail before even attempting it.
+I went through the Niryo NED2 documentation to understand what I'm working with:
+- [NED2 Robot Documentation](https://docs.niryo.com/robots/ned2/)
+- [PyNiryo Python Library](https://niryorobotics.github.io/pyniryo/v1.2.3/index.html)
+- [NED2 Manual](https://www.manualslib.com/manual/2855549/Niryo-Ned2.html)
+- [Vision-Based Pick and Place Tutorial](https://academy.niryo.com/mod/page/view.php?id=235)
 
-The beauty of this approach is that I don't need to dive into full reinforcement learning (which would take forever and require complex simulation setups). Instead, I'm using supervised learning on real data I collect during experiments.
+### Hands-On with NED2
 
-## What I'm Testing
+**Camera Calibration**
 
-I'll be running experiments to induce different types of failures:
-- **Slips**: Object slides out of the gripper
-- **Shifts**: Object moves during the approach
-- **Collisions**: Gripper bumps into something
-- **Speed issues**: Moving too fast or too slow
-- **Angle problems**: Approaching from the wrong direction
+I calibrated the camera to the robot frame using the eye-in-hand setup with the [2D camera kit](https://docs.niryo.com/accessories/vision-set/) that came with NED2. Here's what I did:
+1. Selected a few points on the table
+2. Used freehand movement to navigate the robot to each point and saved the position
+3. Repeated this at least 4 times to get enough point correspondences
 
-For each failure type, I'll test different recovery strategies and see what works best.
+After calibrating, I ran a simple pick and place from point A to point B to test it out.
 
-## The Hardware & Software Stack
+**Gripper Testing**
 
-**Hardware:**
-- UR10 CB Series robotic arm (the workhorse)
-- Gripper with force feedback sensors
-- Depth camera for vision (object detection and pose estimation)
+This is the critical part for failure detection. I need real-time feedback from the gripper to detect when a grasp fails. I tested what sensor data the NED2 gripper can provide:
 
-**Software:**
-- YOLO for detecting objects in real-time
-- UR Python libraries for robot control
-- GraspNet for grasp planning
-- URSim for testing things safely in simulation first
+- **Width feedback**: Can I read the current gripper opening distance to detect object presence?
+- **Torque/force feedback**: Can I measure grip force to detect slips or verify grasp stability?
 
-## Building a Dataset
+I also wrote test scripts using the PyNiryo NED2 API to see if I could programmatically control the gripper width—setting it to specific opening distances rather than just binary open/close commands.
 
-One thing I'm particularly excited about is building a comprehensive **failure mode dataset**. Every time the robot fails, I'll capture:
-- Images of the object before and after
-- Sensor readings (force, gripper width, position)
-- What recovery strategy was used
-- Whether it worked
+**What I Found:**
 
-This dataset could be useful for other researchers working on similar problems. Plus, it'll let me do statistical analysis to figure out which factors actually matter for success.
+The NED2 gripper operates using a resistance-based closing mechanism. When commanded to close, it continues closing until it encounters resistance (contact with an object), then stops. The limitations I discovered:
 
-## Benchmarking: Proof It Works
+- **No torque or force feedback**: The API doesn't expose any force sensor data, so I can't measure grip strength or detect when an object is slipping
+- **No width control**: I can't command specific opening distances (e.g., "open to 40mm"). Only binary commands: fully open or close until resistance
+- **No width reading**: I can't query the current gripper position, so I can't monitor changes during transport
 
-To prove this approach actually helps, I'm comparing three scenarios:
+The gripper does provide basic binary feedback, i.e., if it closes fully, nothing was grasped. If it stops partway, something was encountered.
 
-1. **No Recovery**: Robot stops on first failure (baseline)
-2. **Simple Retry**: Robot tries the exact same grasp again
-3. **Intelligent Recovery**: Robot uses my hybrid system to adapt
+**The Problem:**
 
-I'll measure success rates, recovery time, and how many attempts it takes before succeeding. The goal is to show that intelligent recovery significantly outperforms the alternatives.
+While I can detect initial grasp success (gripper stopped at some width vs. closed fully), **I cannot detect if the object drops during transport.** The gripper maintains its position after stopping even if the object falls out, the fingers stay at that width. From the robot's perspective, the gripper state looks identical whether it's holding the object or not.
 
-## What's Next?
+## Key Takeaway
 
-Over the next few weeks, I'll be:
-- Finishing up the literature review (due mid-February)
-- Getting the hardware fully calibrated and tested
-- Setting up the vision system
-- Running initial failure experiments
+This is a valuable finding because now I know what I'm dealing with. Getting tool feedback is going to be harder than expected with NED2.
 
-I'll be posting weekly updates here documenting progress, challenges, and interesting findings. Expect lots of videos, graphs, and probably some funny failure cases.
+Next steps:
+- Dig deeper into NED2's capabilities
+- Explore other robots in the lab that might give better tool feedback
 
-## The Timeline
+## Time Concerns
 
-Here's the rough plan (check out the [full Gantt chart](/final-year-blog/gantt-chart/) for details):
-- **February**: Literature review, system setup
-- **March**: Failure mode identification
-- **April**: Recovery strategy development, data collection
-- **May**: Analysis and benchmarking
-- **June**: Thesis writing
-- **July**: Final revisions and submission
+I'm a bit anxious about the timeframe. My project needs a lot of data collection and experimental runs to identify potential failures, so I'm worried about getting valuable results within the deadline.
 
-## Challenges I'm Expecting
+To tackle this, I'm making a Gantt chart ASAP to plan out the entire project so I can follow it without panicking.
 
-Let's be real—there are some things I know will be tough:
-
-**Time Constraints**: I've got about 5 months to do everything, so I'm being strategic about what to prioritize. That's why I'm skipping reinforcement learning—it's cool, but sim-to-real transfer alone could eat up months.
-
-**Scope Management**: I'm focusing on pick-and-place failures only, not mechanical faults or hardware issues. The robot also can't magically reach objects outside its workspace, so I need to identify when a failure is truly unrecoverable.
-
-**Data Quality**: Getting clean, consistent data from real-world experiments is always tricky. I'll need to be careful about calibration and validation.
-
-## Want to Learn More?
-
-If you're interested in the technical details, check out:
-- [About the Project](/final-year-blog/about/) - Full methodology and background
-- [Resources](/final-year-blog/resources/) - Tutorials and tools I'm using
-- [Literature Review](/final-year-blog/literature-review/) - Academic research (coming soon)
+See my [Gantt chart](/final-year-blog/gantt-chart/) for the full breakdown.
 
 ---
 
-Thanks for following along! I'll be posting weekly updates as the project progresses. Feel free to reach out if you have questions or suggestions—I'm always happy to chat about robotics.
-
-**Next week:** Setting up the vision system and running initial calibration tests.
+**Next:** Exploring gripper alternatives and diving deeper into sensor options.

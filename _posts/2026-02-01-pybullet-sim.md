@@ -1,5 +1,5 @@
 ---
-title: "Day 4: Moving Complex Failures to Simulation"
+title: "Recovery Policy on Simulation"
 date: 2026-02-01 14:00:00 +0000
 categories: [Project Updates, Simulation]
 tags: [pybullet, simulation, ned2, rl, failure-recovery]

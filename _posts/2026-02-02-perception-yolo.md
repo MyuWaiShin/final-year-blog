@@ -61,7 +61,6 @@ This was the worst performer. The training actually **early-stopped at iteration
 
 ## Technical Analysis
 
-**The "Zero-Shot" Problem:**
 All models were trained and tested on a clean white background workspace. The YOLOv26 architecture seems much more sensitive to this domain shift than YOLOv8.
 
 **Data Deficiencies Identified:**

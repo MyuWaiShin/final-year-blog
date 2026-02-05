@@ -8,7 +8,6 @@ pin: false
 last_modified_at: false
 ---
 
-## Research: Hybrid Action Spaces
 
 I've been looking into how to handle failures where simple retries won't work. I found some interesting research on **RecoveryChaining** which uses a "Hybrid Action Space."
 

@@ -8,7 +8,6 @@ pin: true
 last_modified_at: false
 ---
 
-## Follow Along
 
 In this project, I am investigating failure detection and recovery methods for when a robotic arm fails to grasp an object. This blog documents my research, experiments, and findings along the way.
 

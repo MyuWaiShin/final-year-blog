@@ -8,7 +8,6 @@ pin: false
 last_modified_at: false
 ---
 
-## The Perception Challenge
 
 To pick up objects autonomously, the robot first needs to know exactly where they are. I am implementing a vision pipeline to detect and localize my three target objects: **Cubes, Cylinders, and Arcs**.
 

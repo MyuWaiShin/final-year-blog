@@ -8,7 +8,6 @@ pin: false
 last_modified_at: false
 ---
 
-## Supervisor Meeting
 
 Came in early to discuss my progress and the Ned2 gripper feedback issue with my supervisors. They recommended switching to the **UR10 CB-Series** available in the lab and taking a more experimental approach.
 

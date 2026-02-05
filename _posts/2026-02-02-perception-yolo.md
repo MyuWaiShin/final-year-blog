@@ -34,44 +34,45 @@ I trained **4 different models** on a dataset of approximately **12,000 images p
 
 ## Experimental Results
 
-The results were surprisingly mixed, highlighting the importance of data quality over model architecture.
+Here are the results from the live testing of all models:
 
-*You can find the training data for Model 1 [here on OneDrive](#).*
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); gap: 10px;">
+  <img src="/assets/img/yolo_v8_baseline.png" alt="YOLOv8 Baseline" style="width: 100%;" />
+  <img src="/assets/img/yolo_top_view_fail.png" alt="Top View Failure" style="width: 100%;" />
+  <img src="/assets/img/yolo_multi_class.png" alt="Multi Class Detection" style="width: 100%;" />
+  <img src="/assets/img/yolo_confusion.png" alt="YOLO Confusion" style="width: 100%;" />
+  <img src="/assets/img/yolo_overfit.png" alt="Overfitting Example" style="width: 100%;" />
+  <img src="/assets/img/yolo_new_1.png" alt="Test Result 1" style="width: 100%;" />
+  <img src="/assets/img/yolo_new_2.png" alt="Test Result 2" style="width: 100%;" />
+  <img src="/assets/img/yolo_new_3.png" alt="Test Result 3" style="width: 100%;" />
+</div>
+<br>
 
-### 1. YOLOv8 (50 Epochs) - *The Current Best*
-This model performed the best out of all four. 
-![YOLOv8 Baseline](/assets/img/yolo_v8_baseline.png)
+**Key Observations & Issues:**
 
-However, it still struggles with **Top-Down Views**, particularly for the cylinder. It often fails to detect the cylinder when viewed directly from above. 
-![Top View Failure](/assets/img/yolo_top_view_fail.png)
 
-### 2. YOLOv8 (100 Epochs) - *Overfitting*
-I expected improvements with more training, but the performance actually degraded. The model appears to be overfitting to the white background of the training set.
-![Multi Class Detection](/assets/img/yolo_multi_class.png)
 
-### 3. YOLOv26 (50 Epochs) - *Fast but Inaccurate*
-The inference is noticeably faster, validating the efficiency claims. However, the accuracy took a massive hit.
-![YOLO Confusion](/assets/img/yolo_confusion.png)
+Based on these tests, it's clear that the models (especially the newer YOLOv26) are struggling. Here are the four main issues I need to fix:
 
-**Major Issue:** Significant class confusion. It frequently mistakes cubes for arcs or cylinders. The lack of Non-Maximum Suppression seems to make it less robust to ambiguous features in my current dataset.
-
-### 4. YOLOv26 (100 Epochs) - *Complete Failure*
-This was the worst performer. The training actually **early-stopped at iteration 44**. The model overfitted so severely that it fails to detect *anything* in the real-world test.
-![Overfitting Example](/assets/img/yolo_overfit.png)
-
-## Technical Analysis
-
-All models were trained and tested on a clean white background workspace. The YOLOv26 architecture seems much more sensitive to this domain shift than YOLOv8.
-
-**Data Deficiencies Identified:**
-*   **Cylinder & Arc Data:** The dataset is unbalanced or lacks feature-rich angles for these shapes.
-*   **Top-View Bias:** The models fail almost consistently from top-down angles. I need to capture significantly more data from this perspective.
-*   **Variation:** The dataset lacks background diversity, causing the models (especially v26) to latch onto background artifacts rather than object features.
+1.  **Top-Down Blindness:** None of the models detect objects well when viewed from directly above. I need significantly more data from this angle.
+2.  **Background Sensitivity:** The models were trained on a brighter lighting but tested on lower-lighting. They are over-sensitive to this domain shift and need more background variation and lighting variation in the dataset.
+3.  **Cylinder & Arc Confusion:** These shapes are frequently either missed completely or mistaken for each other.
+4.  **Small Cube Detection:** The smaller cubes are harder to detect and need more dedicated training examples.
 
 ## Next Steps
+
+I definitely need the speed of YOLOv26 for the live detection pipeline, so I'm not giving up on it yet.
 
 1.  **Data Collection:** Capture a new dataset specifically targeting top-down views and adding background variation.
 2.  **Retraining:** Retrain YOLOv26 with the augmented dataset.
 3.  **Pose Estimation:** Once detection is reliable, implement 6D pose estimation.
 
+*You can find the training data for Model 1 [here](https://livemdxac-my.sharepoint.com/:u:/g/personal/ms3433_live_mdx_ac_uk/IQCzK2LMzAIgT6h4ukf1n96lASdN4jogo36mJXC-pVdGLYQ?e=xKAwV0).*
+
+<div style="text-align: center; margin: 20px 0;">
+  <video style="width: 50%; border-radius: 8px;" autoplay loop muted playsinline>
+    <source src="/final-year-blog/assets/img/cubes_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="font-size: 0.85em; color: #6c757d;"><em>Running inference on the test data.</em></p>
 

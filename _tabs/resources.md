@@ -37,7 +37,7 @@ This page contains useful tutorials, documentation, code repositories, and learn
 
 ## Computer Vision & Object Detection
 
-### YOLO (You Only Look Once)
+### YOLO
 - **[Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)** - Latest YOLO implementation with excellent documentation
 - **[YOLOv8 Training Tutorial](https://docs.ultralytics.com/modes/train/)** - Official guide for training custom YOLO models
 - **[Roboflow](https://roboflow.com/)** - Dataset management and annotation tool for YOLO training
@@ -77,31 +77,6 @@ This page contains useful tutorials, documentation, code repositories, and learn
 
 ---
 
-## Development Tools
-
-### Version Control
-- **[Git Documentation](https://git-scm.com/doc)** - Official Git documentation
-- **[GitHub Guides](https://guides.github.com/)** - GitHub tutorials and best practices
-
-### Python Environment Management
-- **[Conda Documentation](https://docs.conda.io/)** - Package and environment management
-- **[virtualenv Guide](https://virtualenv.pypa.io/)** - Python virtual environments
-
----
-
-## General Robotics Resources
-
-### Online Courses
-- **[Modern Robotics (Northwestern)](https://modernrobotics.northwestern.edu/)** - Comprehensive robotics course with free textbook
-- **[Robot Academy (QUT)](https://robotacademy.net.au/)** - Free online robotics courses
-
-### Communities
-- **[ROS Discourse](https://discourse.ros.org/)** - ROS community forum
-- **[r/robotics](https://www.reddit.com/r/robotics/)** - Robotics subreddit
-- **[Stack Overflow - Robotics](https://stackoverflow.com/questions/tagged/robotics)** - Q&A for robotics programming
-
----
-
 ## Academic Datasets
 
 ### Manipulation Datasets
@@ -115,8 +90,6 @@ This page contains useful tutorials, documentation, code repositories, and learn
 
 - **[RViz](http://wiki.ros.org/rviz)** - 3D visualization for robots (if using ROS)
 - **[MeshLab](https://www.meshlab.net/)** - 3D mesh processing
-- **[CloudCompare](https://www.cloudcompare.org/)** - 3D point cloud processing
-- **[Blender](https://www.blender.org/)** - 3D modeling and rendering (for creating synthetic training data)
 
 ---
 

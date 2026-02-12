@@ -1,5 +1,5 @@
 ---
-title: "Recovery Policy on Simulation"
+title: "Familiarisation with Simulation"
 date: 2026-01-30 14:00:00 +0000
 categories: [Project Updates, Simulation]
 tags: [pybullet, simulation, ned2, rl, failure-recovery]
@@ -40,5 +40,8 @@ I wrote a python script based on online examples to attempt a simple pick-and-pl
 **Current Status:** The robot is unstable in simulation - there's excessive wiggling and oscillation during movement.
 
 I suspect it's an issue with the joint damping or the control loop frequency in my script. I need to debug the physics parameters in the URDF or check my motor control logic.
+
+![PyBullet Ned2 Simulation](/assets/img/pybullet_ned2.png){: .shadow }
+*Ned2 robot loaded in PyBullet with a cube object*
 
 *Work in progress...*

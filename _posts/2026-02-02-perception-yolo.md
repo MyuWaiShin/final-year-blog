@@ -1,5 +1,5 @@
 ---
-title: "Perception Training - YOLOv8 vs YOLOv26"
+title: "Object Detection Training - YOLOv8 vs YOLOv26"
 date: 2026-02-02 10:00:00 +0000
 categories: [Project Updates, Perception]
 tags: [yolo, computer-vision, deep-learning, object-detection]

@@ -8,18 +8,7 @@ pin: false
 last_modified_at: false
 ---
 
-Today I ran extensive experiments to detect pick-and-place failures using only gripper feedback — no vision involved yet. The goal: how does the robot know if it has grabbed something just from force sensing and gripper width?
-
-## Experimental Setup
-
-I tested preprogrammed pick-and-place poses with controlled variations:
-
-**Variables I controlled:**
-- Object presence (object vs. no object at pick location)
-- Object orientation (cubes, cylinders, arcs at different angles)
-- Position offset (slightly shifted from exact preprogrammed location)
-
-**Objects:** Lightweight styrofoam cubes, cylinders, and arcs
+I have been working on gripper-based failure detection in pick and place, and here are the steps I took and what I have done so far.
 
 ---
 

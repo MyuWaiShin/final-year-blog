@@ -1,20 +1,27 @@
 ---
-layout: page
+layout: post
 title: Literature Review
 icon: fas fa-graduation-cap
 order: 3
 toc: true
+date: 2026-01-28
+categories: [Literature Review]
+tags: [research, papers]
+pin: false
 ---
 
 > **Status:** This page is continuously updated as I review relevant research for the project.
 
-This section contains academic papers and research publications reviewed for my project on **multi-modal failure detection and recovery in robotic pick-and-place systems**.
+This section contains academic papers and research publications reviewed for my project on multi-modal failure detection and recovery in robotic arm grasp.
 
-*This page follows the same citation format as the [technical report](https://github.com/myuwa/final-year-blog/blob/main/assets/files/Technical%20Report%20-%20Chpt%201%20%262.pdf).*
+*This page follows the same citation format as the [technical report](https://github.com/MyuWaiShin/final-year-blog/blob/main/assets/files/Technical%20Report%20-%20Chpt%201%20%262.pdf).*
 
 ---
 
-## Grasp Planning & Execution
+## **Grasp Planning & Execution**
+
+> Understanding what conditions lead to success or failure.
+{: .prompt-info }
 
 **[3]** Bicchi, A., & Kumar, V. (2000). Robotic grasping and contact: A review. In *Proceedings of IEEE ICRA*, pp. 348–353.
 
@@ -29,7 +36,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Introduces GraspIt!, a grasp simulation tool that lets you test and score different grasp poses before running anything on the real robot. Useful background for the simulation testing approach used early in this project.</p>
+<p>GraspIt! is a grasp simulation tool that lets you test and score different grasp poses before running anything on the real robot. Useful background for the simulation testing approaches.</p>
 </details>
 
 ---
@@ -38,7 +45,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Trains a neural network entirely on synthetic data to pick good grasp poses, and it actually works on real objects. I referenced this mainly because it introduced the idea of using the previous failed grasp to plan a better next one — which is basically what my re-grasp recovery routine does.</p>
+<p>Trains a neural network entirely on synthetic data to pick good grasp poses, and it works on real objects. I referenced this mainly because it introduced the idea of using the previous failed grasp to plan a better next one, which is what my re-grasp recovery routine does.</p>
 </details>
 
 ---
@@ -47,7 +54,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Looks at how robots can pick objects they've never seen before in a messy pile. Uses visual affordance matching across different image domains. Relevant to object detection challenges — especially when the camera view changes as the robot moves.</p>
+<p>Looks at how robots can pick objects they've never seen before in a messy pile. Uses visual affordance matching across different image domains. Relevant to object detection challenges, especially when the camera view changes as the robot moves.</p>
 </details>
 
 ---
@@ -61,13 +68,16 @@ This section contains academic papers and research publications reviewed for my 
 
 ---
 
-## Failure Detection & Multi-Modal Sensing
+## **Failure Detection & Multi-Modal Sensing**
+
+> How robots detect grasp failures using different sensor combinations.
+{: .prompt-info }
 
 **[1]** Drigalski, R., et al. (2020). Robust picking via grasping under object pose uncertainty. *IEEE Robotics & Automation Letters*, 5(2), 3304–3311.
 
 <details>
 <summary>Show abstract</summary>
-<p>Tackles the problem of grasping when you don't know the object's exact position — the robot has to deal with pose uncertainty. Directly relevant to position shift failures in my project, where the object isn't quite where the camera estimated it to be.</p>
+<p>Tackles the problem of grasping when you don't know the object's exact position and the robot has to deal with pose uncertainty. Directly relevant to position shift failures in my project, where the object isn't quite where the camera estimated it to be.</p>
 </details>
 
 ---
@@ -76,7 +86,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Probably the closest paper to what I'm doing. They combine visual and proprioceptive signals to detect pick-and-place failures even when the object is partially hidden. Shows that using multiple sensor types together really does improve detection reliability compared to any single signal.</p>
+<p>This is the closest paper to the architecture of my project. They combine visual and proprioceptive signals to detect pick-and-place failures even when the object is partially hidden. Shows that using multiple sensor types together really does improve detection reliability compared to any single signal.</p>
 </details>
 
 ---
@@ -85,7 +95,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Tests whether just using the gripper's open/close signal is reliable enough to detect grasp success in industrial bin-picking. Spoiler: it isn't. This is pretty much the motivation for why my project doesn't rely only on the gripper signal and adds camera verification on top.</p>
+<p>Tests whether just using the gripper's open/close signal is reliable enough to detect grasp success in industrial bin-picking and no, it isn't. This is pretty much the motivation for why my project doesn't rely only on the gripper signal and adds camera verification on top.</p>
 </details>
 
 ---
@@ -94,7 +104,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Uses deep learning on tactile/haptic signals to control robot manipulation. The idea is to predict what the next touch signal should be and flag anything unexpected. Background reading on tactile-based detection — relevant to the force-sensing side of my multi-modal system.</p>
+<p>Uses deep learning on tactile/haptic signals to control robot manipulation. The idea is to predict what the next touch signal should be and flag anything unexpected. Background reading on tactile-based detection is relevant to the force-sensing side of my multi-modal system.</p>
 </details>
 
 ---
@@ -126,13 +136,16 @@ This section contains academic papers and research publications reviewed for my 
 
 ---
 
-## Post-Grasp Verification (Vision-Based)
+## **Post-Grasp Verification (Vision-Based)**
+
+> Using the camera to confirm success or failure after the robot has lifted an object.
+{: .prompt-info }
 
 **[9]** Zeng, A., et al. (2022). Robotic pick-and-place of novel objects in clutter. *International Journal of Robotics Research*, 41(7), 690–705.
 
 <details>
 <summary>Show abstract</summary>
-<p>Covers perception for picking unfamiliar objects in clutter, including how to visually confirm whether the grasp actually succeeded. Relevant to the camera-based post-grasp check I run after each pick attempt.</p>
+<p>Covers perception for picking unfamiliar objects in clutter, including how to visually confirm whether the grasp has succeeded. Relevant to the camera-based post-grasp check I run after each pick attempt.</p>
 </details>
 
 ---
@@ -141,7 +154,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Uses a deep learning model to figure out the orientation of cylindrical objects for grasping. Directly relevant to orientation failure — cylinders are hard because they look the same from many angles, so getting the pose wrong is easy.</p>
+<p>Uses a deep learning model to figure out the orientation of cylindrical objects for grasping. Directly relevant to orientation failure, as cylinders are hard to grasp because they look the same from many angles, making it easy to get the pose wrong.</p>
 </details>
 
 ---
@@ -155,13 +168,16 @@ This section contains academic papers and research publications reviewed for my 
 
 ---
 
-## Recovery Strategies
+## **Recovery Strategies**
+
+> How robots plan and execute recovery actions after a failed grasp.
+{: .prompt-info }
 
 **[15]** Mahler, J., et al. (2017). Dex-Net 2.0: Deep learning to plan robust grasps with synthetic point clouds and analytic grasp metrics. In *Proceedings of RSS 2017*.
 
 <details>
 <summary>Show abstract</summary>
-<p>Also listed under grasp planning. From a recovery angle — Dex-Net 2.0 uses information from a failed grasp to update the next grasp plan rather than just trying the same pose again. That iterative re-grasping idea is what my position-shift recovery routine is based on.</p>
+<p>Also listed under grasp planning. From a recovery angle, Dex-Net 2.0 uses information from a failed grasp to update the next grasp plan rather than just trying the same pose again. That iterative re-grasping idea is what my position-shift recovery routine is based on.</p>
 </details>
 
 ---
@@ -170,7 +186,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>A writeup of everything that went wrong (and right) when teams tried to build real warehouse picking robots. Very grounded — lots of practical lessons about failure recovery that you don't find in purely academic papers. Useful for checking my recovery routines against real-world constraints.</p>
+<p>A writeup of everything that went wrong (and right) when teams tried to build real warehouse picking robots. Very grounded. Lots of practical lessons about failure recovery that you don't find in purely academic papers. Useful for checking my recovery routines against real-world constraints.</p>
 </details>
 
 ---
@@ -188,18 +204,21 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Teaches a robot to automatically chain together recovery actions when manipulation goes wrong — collision, slip, position error. Trained in PyBullet sim. Very relevant to my project structure: I also test failure recovery in PyBullet first, and the idea of having separate recovery routines per failure type comes from work like this.</p>
+<p>Teaches a robot to automatically chain together recovery actions when manipulation goes wrong (includes collision, slip, position error). Trained in PyBullet sim. Very relevant to my project structur in identifying the failure type and validating recovery routines. It also gives me a clear insight on the constraints of the recovery routines.</p>
 </details>
 
 ---
 
-## Hardware & Software Tools
+## **Hardware & Software Tools**
+
+> References for the hardware and libraries directly used in this project.
+{: .prompt-info }
 
 **[17]** Universal Robots. (2019). *UR10/CB3 Technical Specifications*. Universal Robots A/S, Odense, Denmark. [https://www.universal-robots.com](https://www.universal-robots.com)
 
 <details>
 <summary>Show abstract</summary>
-<p>The official spec sheet for the UR10 robot arm I'm using. Has all the numbers — reach, payload, joint limits, I/O specs. Referenced whenever I need to justify a hardware constraint or design decision.</p>
+<p>The official spec sheet for the UR10 robot arm I'm using. Has all the information about the robot arm including reach, payload, joint limits, I/O specs that I used to justify a hardware constraint or design decision.</p>
 </details>
 
 ---
@@ -208,7 +227,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>The official citation for the Ultralytics YOLO library. I use YOLOv8n for object detection during the pick task, and YOLOv8n-cls for binary post-grasp classification (holding vs empty). Both are the nano variants — small enough to run on a laptop in real time.</p>
+<p>The official citation for the Ultralytics YOLO library. I use YOLOv8n for object detection during the pick task, and YOLOv8n-cls for binary post-grasp classification (holding vs empty).</p>
 </details>
 
 ---
@@ -217,7 +236,7 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>Product documentation for the OAK-D Lite camera I'm using in an eye-in-hand setup on the robot. Covers the RGB and stereo depth specs. Referenced for the camera's field of view, depth range, and how it integrates with the DepthAI SDK.</p>
+<p>Product documentation for the OAK-D Lite camera I'm using in an eye-in-hand setup on the robot. Covers the RGB and stereo depth specs. Required for the camera's field of view, depth range, and how it integrates with the DepthAI SDK.</p>
 </details>
 
 ---
@@ -226,11 +245,10 @@ This section contains academic papers and research publications reviewed for my 
 
 <details>
 <summary>Show abstract</summary>
-<p>The library I use to control the UR10 robot from Python. It gives direct access to the robot's real-time data exchange (RTDE) interface — so I can send joint targets, read the TCP pose, and check I/O signals with low latency. This is the main robot control interface throughout the project.</p>
+<p>The library I use to control the UR10 robot from Python. It gives direct access to the robot's real-time data exchange (RTDE) interface so I can send joint targets, read the TCP pose, and check I/O signals with low latency. This is the main robot control interface throughout the project.</p>
 </details>
 
 ---
 
-*This page is continuously updated as the literature review progresses.*
 
 For practical tutorials and implementation resources, see the [Resources](/final-year-blog/resources/) page.

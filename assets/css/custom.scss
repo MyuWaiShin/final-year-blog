@@ -1,0 +1,13 @@
+---
+---
+
+/* Lighter shade for .prompt-info (info blue callout boxes) */
+.prompt-info {
+  background-color: #e8f4fd !important;
+  border-color: #9acef3 !important;
+  color: #256e9c !important;
+}
+
+.prompt-info > p:first-child::before {
+  color: #51a9f1 !important;
+}

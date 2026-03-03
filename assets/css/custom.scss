@@ -11,3 +11,12 @@
 .prompt-info > p:first-child::before {
   color: #51a9f1 !important;
 }
+
+/* Force images inside flex-column containers to centre */
+div[style*="flex-direction:column"] img,
+div[style*="flex-direction: column"] img {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}

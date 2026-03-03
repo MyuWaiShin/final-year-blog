@@ -89,13 +89,13 @@ The mono cameras (CAM_B and CAM_C) are global-shutter, meaning the entire frame 
 **Rolling shutter vs. global shutter:**
 
 <div style="display:flex; flex-direction:column; align-items:center; text-align:center;">
-  <img src="/assets/img/rolling and global image.webp" alt="Rolling vs global shutter" style="width:50%;" />
+  <img src="/assets/img/rolling and global image.webp" alt="Rolling vs global shutter" style="display:block; float:none; width:50%; margin:0 auto;" />
   <em style="font-size:0.85rem; color:#666; margin-top:0.3rem;"><br>
   Source: <a href="https://kodifly.com/shutter-types-in-cameras-rolling-vs-global-shutters">kodifly.com</a></em>
 </div>
 
 <div style="display:flex; flex-direction:column; align-items:center; text-align:center; margin-top:1rem;">
-  <img src="/assets/img/rolling-shutter-vs-global-shutter.jpg" alt="rolling vs global shutter" style="width:50%;" />
+  <img src="/assets/img/rolling-shutter-vs-global-shutter.jpg" alt="rolling vs global shutter" style="display:block; float:none; width:50%; margin:0 auto;" />
   <em style="font-size:0.85rem; color:#666; margin-top:0.3rem;"><br>
   Source: <a href="https://thesmartphonephotographer.com/mobile-camera-shutter-speed/">thesmartphonephotographer.com</a></em>
 </div>

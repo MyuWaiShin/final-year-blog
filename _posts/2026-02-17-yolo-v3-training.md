@@ -261,7 +261,24 @@ YOLOv8n and YOLO26n are nearly identical in recall numbers. The difference is ma
 
 ---
 
+## Test Inference
 
+Both models detect the targets reliably across different positions, orientations, and distances during the test set inference.
+
+<div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+  <figure style="display:flex; flex-direction:column; align-items:center; flex:1; min-width:280px; max-width:45%;">
+    <img src="/assets/img/v8n_test_inference.gif" alt="YOLOv8n test inference" style="display:block; float:none; width:100%;" />
+    <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem; text-align:center;"><em>YOLOv8n test inference</em></figcaption>
+  </figure>
+  <figure style="display:flex; flex-direction:column; align-items:center; flex:1; min-width:280px; max-width:45%;">
+    <img src="/assets/img/26n_test_inference.gif" alt="YOLO26n test inference" style="display:block; float:none; width:100%;" />
+    <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem; text-align:center;"><em>YOLO26n test inference</em></figcaption>
+  </figure>
+</div>
+
+The main issue visible in the inference is background false positives. The textured mat gets picked up and labelled as a cylinder in some frames. This matches what the confusion matrix showed, where the model tends to fire on textured backgrounds and classify them as cylinder.
+
+The good thing is that the confidence scores on these false positives are usually low, around 0.3 to 0.5, whereas actual object detections come in at 0.85 or above. So setting a higher confidence threshold when deploying on the OAK-D Lite should filter most of them out without dropping the real detections.
 
 ## Next Steps
 

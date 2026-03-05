@@ -25,6 +25,8 @@ For each object class, I recorded around 20-second clips using `record_data.py` 
 
 Because the OAK-D pipeline was running on my laptop CPU at the time of recording, the actual frame throughput was slower than native. Each 20-second clip produced roughly 7 seconds worth of real footage, but every frame was still usable for training.
 
+<p style="font-size:0.85rem; color:#888;"><em>The textured mat used in recordings can be viewed here: <a href="/assets/files/Texture Mat.pdf">Texture Mat (PDF)</a></em></p>
+
 ---
 
 ## Data Preparation V3

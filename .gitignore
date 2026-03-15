@@ -25,3 +25,8 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
+*.mp4
+*.MOV
+*.heic
+*.MOV
+*.HEIC

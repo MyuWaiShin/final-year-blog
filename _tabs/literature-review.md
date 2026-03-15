@@ -16,7 +16,7 @@ pin: false
 
 This section contains academic papers and research publications reviewed for my project on multi-modal failure detection and recovery in robotic arm grasp.
 
-*This page follows the same citation format as the [technical report](https://github.com/MyuWaiShin/final-year-blog/blob/main/assets/files/Technical%20Report%20-%20Chpt%201%20%262.pdf).*
+*This page follows the same citation format as the [technical report](https://github.com/MyuWaiShin/final-year-blog/blob/main/assets/files/Technical%20Report%20-%20Chpt%201%20%26%202.pdf).*
 
 ---
 

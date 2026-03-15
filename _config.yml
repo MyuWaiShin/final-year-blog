@@ -10,10 +10,10 @@ lang: en
 timezone: Europe/London
 
 # jekyll-seo-tag settings
-title: Failure Detection and Recovery in Robotic Pick-and-Place Systems
-tagline: Building Intelligent Recovery Mechanisms for Robotic Manipulation
+title: Failure Detection and Recovery in Robotic Arm Grasp
+tagline: Building Intelligent Recovery Mechanisms for Robotic Arm Manipulation
 description: >-
-  This research investigates failure detection and recovery strategies in robotic pick-and-place operations
+  This research investigates failure detection and recovery strategies in robotic arm grasp operations
   using a hybrid approach combining rule-based recovery with learning-based grasp refinement. 
   Systematic experiments with a UR10 manipulator quantify recovery effectiveness across different failure modes,
   building a comprehensive failure dataset for future research.
@@ -28,7 +28,7 @@ social:
   name: Myu Wai Shin
   email: myuwaishin10@gmail.com
   links:
-    - https://github.com/MyuWaiShin
+    - https://github.com/MyuWaiShin/Final_Year_Project_2026
     - https://www.linkedin.com/in/myu-wai-shin-0bb3b2295/
 
 theme_mode: # [light | dark]

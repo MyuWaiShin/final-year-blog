@@ -6,7 +6,7 @@ order: 2
 toc: true
 ---
 
-**Project Title:** Failure Detection and Recovery in Robotic Pick-and-Place Systems  
+**Project Title:** Failure Detection and Recovery in Robotic Arm Grasp  
 **Duration:** 21 January 2026 - 9 April 2026 (12 weeks)  
 **Chart created by:** Myu Wai Shin  
 **Last Updated:** 10 February 2026

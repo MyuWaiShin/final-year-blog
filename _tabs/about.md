@@ -28,7 +28,7 @@ I'm a final-year Mechatronics and Robotics Engineering student passionate about 
 
 ## **About the Project**
 
-### Failure Detection and Recovery in Robotic Pick-and-Place Systems
+### Failure Detection and Recovery in Robotic Arm Grasp
 
 ### The Research Questions
 
@@ -131,7 +131,7 @@ To evaluate the effectiveness of intelligent recovery, I compare three different
 ## Scope & Limitations
 
 **What This Project Covers:**
-- Failure detection and recovery in pick-and-place operations
+- Failure detection and recovery in robotic arm grasp operations
 - Hybrid approach combining rule-based and learning-based methods
 - Comprehensive data collection and benchmarking
 

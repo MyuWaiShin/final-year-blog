@@ -10,11 +10,13 @@ tags: [research, papers]
 pin: false
 ---
 
+> **Last Updated:** 19 February 2026.
+
 > **Status:** This page is continuously updated as I review relevant research for the project.
 
 This section contains academic papers and research publications reviewed for my project on multi-modal failure detection and recovery in robotic arm grasp.
 
-*This page follows the same citation format as the [technical report](https://github.com/MyuWaiShin/final-year-blog/blob/main/assets/files/Technical%20Report%20-%20Chpt%201%20%262.pdf).*
+*This page follows the same citation format as the [technical report](https://github.com/MyuWaiShin/final-year-blog/blob/main/assets/files/Technical%20Report%20-%20Chpt%201%20%26%202.pdf).*
 
 ---
 
@@ -64,6 +66,15 @@ This section contains academic papers and research publications reviewed for my 
 <details>
 <summary>Show abstract</summary>
 <p>Instead of planning a grasp once and executing it blindly, this paper continuously updates the grasp candidate as the robot approaches the object. The idea of checking and adjusting in real-time (rather than one-shot) directly influences how I designed the post-grasp verification step.</p>
+</details>
+
+---
+
+**[22]** Qiao, J., et al. (2025). Multi-object robotic grasping setup based on RGB-D sensor. *Heliyon*, 11(3), e43445. [https://doi.org/10.1016/j.heliyon.2025.e43445](https://doi.org/10.1016/j.heliyon.2025.e43445)
+
+<details>
+<summary>Show abstract</summary>
+<p>Uses depth cameras and neural networks to predict grasp poses for multiple objects in clutter. This paper is useful background on how deep learning models handle Oriented Bounding Boxes (OBB) for grasping, which I compared against my own lightweight OpenCV approach.</p>
 </details>
 
 ---

@@ -41,7 +41,7 @@ I wrote a python script based on online examples to attempt a simple pick-and-pl
 
 I suspect it's an issue with the joint damping or the control loop frequency in my script. I need to debug the physics parameters in the URDF or check my motor control logic.
 
-![PyBullet Ned2 Simulation](/assets/img/pybullet_ned2.jpg){: .shadow }
+![PyBullet Ned2 Simulation](/assets/img/pybullet_ned2.png){: .shadow }
 *Ned2 robot loaded in PyBullet with a cube object*
 
 *Work in progress...*

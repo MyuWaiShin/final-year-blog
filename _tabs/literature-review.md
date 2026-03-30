@@ -10,7 +10,7 @@ tags: [research, papers]
 pin: false
 ---
 
-> **Last Updated:** 19 February 2026.
+> **Last Updated:** 24 February 2026.
 
 > **Status:** This page is continuously updated as I review relevant research for the project.
 
@@ -143,6 +143,15 @@ This section contains academic papers and research publications reviewed for my 
 <details>
 <summary>Show abstract</summary>
 <p>Compares two types of tactile sensors for detecting slip and triggering a re-grasp. Useful for understanding the slip failure mode I'm dealing with, and for thinking about what sensor signals are actually useful for triggering a recovery action.</p>
+</details>
+
+---
+
+**[23]** Calandra, R., et al. (2018). Slip Detection with Combined Tactile and Visual Information. In *Proceedings of IEEE ICRA 2018*. [arXiv:1802.10153](https://arxiv.org/abs/1802.10153)
+
+<details>
+<summary>Show abstract</summary>
+<p>Proposes combining tactile sensor arrays with visual information to detect slip more reliably than either modality alone. The tactile stream provides a moment-by-moment contact signal while the camera confirms whether the object has visibly moved. Directly relevant to this project's two-stage detection approach, and a key motivation for testing FSR sensors before moving to width-based monitoring plus CLIP visual verification.</p>
 </details>
 
 ---

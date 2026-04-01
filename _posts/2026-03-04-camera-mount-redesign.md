@@ -62,7 +62,7 @@ This is a better design. There is one tilt angle, at one location. If an adjustm
 I was still concerned that v4.1's 30° tilt might still be too much. So I designed a second variant with both the height and the angle brought down, as a fallback in case v4.1 overestimates the needed tilt again.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <img src="/assets/img/cam_mount_4_2(final).png" alt="Camera mount v4.2: shorter height, shallower tilt angle" style="display:block; margin:0 auto; width:70%; border-radius:8px;" />
+  <img src="/assets/img/cam_mount_4_2_final.png" alt="Camera mount v4.2: shorter height, shallower tilt angle" style="display:block; margin:0 auto; width:70%; border-radius:8px;" />
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Mount v4.2: shorter height, shallower tilt angle</em></figcaption>
 </figure>
 

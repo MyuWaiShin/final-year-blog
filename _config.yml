@@ -127,3 +127,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+webrick:
+  mime_types:
+    "video/mp4": [".mp4"]

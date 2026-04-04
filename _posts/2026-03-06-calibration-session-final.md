@@ -8,10 +8,10 @@ pin: false
 last_modified_at: false
 ---
 
+The previous session identified the main problem: wrist orientation was not varied enough across the collected poses, leaving the solver without enough rotational signal to constrain the transform. This time I ran a full 30-pose collection with deliberate wrist rotation variation and the result is a transform .
+
 > **Note:** This post is written in April, backdated to the session date of 6 March.
 {: .prompt-info }
-
-The previous session identified the main problem: wrist orientation was not varied enough across the collected poses, leaving the solver without enough rotational signal to constrain the transform. This time I ran a full 30-pose collection with deliberate wrist rotation variation and the result is a transform .
 
 ---
 

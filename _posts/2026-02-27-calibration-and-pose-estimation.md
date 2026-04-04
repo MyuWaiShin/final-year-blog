@@ -203,7 +203,7 @@ This is repeated for 3 objects at different positions, and then solved for the r
 </figure>
 
 ### Solving the transform with Procrustes SVD
-With 3 pairs of corresponding points we solve for the rigid transform R and t such that:
+With 3 pairs of corresponding points we solve for the rigid transform `R` and `t` such that:
 
 ```python
 P_tcp = R @ P_cam + t

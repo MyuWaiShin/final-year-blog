@@ -101,14 +101,16 @@ if confidence < 0.85:
 ```
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <video controls muted loop style="width:90%; border-radius:8px;" id="clip-inference-vid">
-    <source src="/assets/img/clip_life_inference.mp4" type="video/mp4">
-  </video>
+  <div style="width:90%; position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
+    <iframe src="https://www.youtube.com/embed/_qLwjQqSFrs"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Live CLIP inference showing Holding / Empty / Uncertain with confidence scores</em></figcaption>
 </figure>
-<script>
-  document.getElementById('clip-inference-vid').playbackRate = 1.0;
-</script>
+
 
 **Problem 1: Low confidence**
 

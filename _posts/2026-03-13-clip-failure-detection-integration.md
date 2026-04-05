@@ -83,16 +83,17 @@ After switching to raw URScript, each motion step completed in under a second. W
 On the first attempt, the gripper closed on empty space and missed. CLIP classified the result as Empty and flagged retry.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <img src="/assets/img/empty_clip.png" style="display:block; margin:0 auto; width:100%; border-radius:6px;" />
+  <img src="/assets/img/clip_outputs_empty.png" style="display:block; margin:0 auto; width:100%; border-radius:6px;" />
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>CLIP outputs EMPTY, below confidence threshold</em></figcaption>
 </figure>
 
 On the retry, the gripper picked up the object. CLIP classified it as Holding above 75% confidence and the pipeline continued to place.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <img src="/assets/img/holding_clip.png" style="display:block; margin:0 auto; width:100%; border-radius:6px;" />
+  <img src="/assets/img/clip_outputs_holding.png" style="display:block; margin:0 auto; width:100%; border-radius:6px;" />
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>CLIP outputs HOLDING, above confidence threshold</em></figcaption>
 </figure>
+
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
   <div style="width:90%; position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px;">
@@ -104,6 +105,8 @@ On the retry, the gripper picked up the object. CLIP classified it as Holding ab
   </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Running Post Grasp Verification using CLIP</em></figcaption>
 </figure>
+
+The video above shows the robot retrying the pick when CLIP classified EMPTY at first attempt, then successfully placing the object when CLIP classified HOLDING at the second attempt.
 
 ---
 

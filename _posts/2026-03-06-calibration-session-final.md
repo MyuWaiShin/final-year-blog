@@ -1,5 +1,5 @@
 ---
-title: "Eye-in-Hand Calibration III: Full Session with 30 Poses"
+title: "Eye-in-Hand Calibration III: 30 Poses"
 date: 2026-03-06 12:00:00 +0000
 categories: [Project Updates, Calibration]
 tags: [charuco, hand-eye calibration, tsai-lenz, aruco, pose estimation, tcp]

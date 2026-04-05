@@ -11,8 +11,9 @@ last_modified_at: false
 > **Note:** This post is written in April, backdated to the session date of 13 March.
 {: .prompt-info }
 
+I am planning to set the confidence threshold to 0.75 for the CLIP model. This is because I found that the model is able to classify the objects correctly even when the confidence is lower than 0.85. But before retraining the model to improve accuracy, I want to implement the full grasp failure detection pipeline to verify the model's performance.
 
-Today I started implementing the full grasp failure detection pipeline. This is a proof of concept integrating three check points to verify whether the robot has grasped an object at each stage of the pick sequence. This post describes the logic of each check point and the steps taken to build and integrate them.
+Then,I started implementing the full grasp failure detection pipeline. This is a proof of concept integrating three check points to verify whether the robot has grasped an object at each stage of the pick sequence. This post describes the logic of each check point and the steps taken to build and integrate them.
 
 The three check points are:
 
@@ -82,15 +83,15 @@ After switching to raw URScript, each motion step completed in under a second. W
 On the first attempt, the gripper closed on empty space and missed. CLIP classified the result as Empty and flagged retry.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <img src="/assets/img/empty_clip.png" style="display:block; margin:0 auto; width:80%; border-radius:6px;" />
-  <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>CLIP output — Empty, below confidence threshold</em></figcaption>
+  <img src="/assets/img/empty_clip.png" style="display:block; margin:0 auto; width:100%; border-radius:6px;" />
+  <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>CLIP outputs EMPTY, below confidence threshold</em></figcaption>
 </figure>
 
 On the retry, the gripper picked up the object. CLIP classified it as Holding above 75% confidence and the pipeline continued to place.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <img src="/assets/img/holding_clip.png" style="display:block; margin:0 auto; width:80%; border-radius:6px;" />
-  <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>CLIP output — Holding, above confidence threshold</em></figcaption>
+  <img src="/assets/img/holding_clip.png" style="display:block; margin:0 auto; width:100%; border-radius:6px;" />
+  <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>CLIP outputs HOLDING, above confidence threshold</em></figcaption>
 </figure>
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
@@ -121,7 +122,6 @@ Three channels were running simultaneously:
 |---|---|
 | 29999 (Dashboard) | Loading and playing gripper URPs |
 | 30002 (Secondary Interface) | Sensor stream (AI2 + DI8) and URScript motion commands |
-| 30004 (RTDE Receive) | Read-only TCP pose polling every 10 ms |
 
 ### Issues
 

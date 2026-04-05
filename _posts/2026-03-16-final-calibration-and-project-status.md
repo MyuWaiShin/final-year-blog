@@ -1,5 +1,5 @@
 ---
-title: "Final Camera Mount and Calibration Session"
+title: "Final Camera Mount and Re-Calibration"
 date: 2026-03-16 12:00:00 +0000
 categories: [Project Updates, Calibration]
 tags: [calibration, camera-mount, hand-eye, charuco, pose-estimation]

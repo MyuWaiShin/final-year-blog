@@ -1,5 +1,5 @@
 ---
-title: "Pipeline Planning and Stage 1: Object Search Sweep"
+title: "Pipeline Planning and Stage 1: Explore"
 date: 2026-03-18 12:00:00 +0000
 categories: [Project Updates, Pipeline]
 tags: [yolo, sweep, explore, pipeline, detection]

@@ -19,6 +19,7 @@ Now that I have a working YOLO detection model, the next task is using it to nav
 The approach uses a fallback hierarchy: once the object is found during the sweep, the pipeline first looks for the ArUco tag. If the tag is visible, it uses PnP pose estimation, getting full 6-DOF pose including orientation, which lets the gripper align its approach angle to the object. If the tag is not visible, it falls back to YOLO detection combined with stereo depth to get a 3D position without orientation. The full transform chain, centring correction, and clearance height reference are the same in both modes (see below).
 
 Find my navigation script here: [navigate.py](https://github.com/MyuWaiShin/Final_Year_Project_2026/blob/main/full_pipeline/navigate.py)
+
 ---
 
 ## What the Camera Sees

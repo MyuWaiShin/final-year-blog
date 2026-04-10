@@ -29,6 +29,8 @@ movel(p[x, y, hover_z - 0.07, rx, ry, rz], a=0.05, v=0.02)
 close_gripper()
 ```
 
+This hoever 
+
 ### Step 2: Layer 1 — Width Check
 
 Once the gripper closes, the jaw width is read back from the RG2 via the AI2 analogue input on the robot controller. The width indicates whether anything is between the jaws.

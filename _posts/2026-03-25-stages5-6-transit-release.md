@@ -35,7 +35,7 @@ Transit cannot just blindly drive to the drop zone, the object might slip mid-tr
 ### YOLO Classify Monitor
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <video src="/assets/img/transit_object_loss.mp4"
+  <video src="{{ '/assets/img/transit_object_loss.mp4' | relative_url }}"
     style="width:70%; border-radius:8px; display:block; margin:0 auto;"
     controls loop muted
     playsinline>

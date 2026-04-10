@@ -14,6 +14,7 @@ last_modified_at: false
 
 ## Pipeline Plan
 
+
 The full pipeline is broken into six stages:
 
 | Stage | Script | Description |
@@ -24,6 +25,7 @@ The full pipeline is broken into six stages:
 | 4 | `verify.py` | Lift, YOLO + CLIP visual verification |
 | 5 | `transit.py` | Carry to drop zone, slip monitor |
 | 6 | `release.py` | Open gripper and release object |
+| 7 | `recover.py` | Recovery if grasp, verify or transit fails |
 
 A top-level `main.py` runs the stages in sequence and handles the retry loop. If grasp or verify fails, the robot recovers and navigates again from Stage 2.
 
@@ -41,8 +43,7 @@ For the final pipeline, I need the detection to be reliable for the robot to nav
 
 ## Stage 1: explore.py
 
-> Script: `full_pipeline/explore.py`
-{: .prompt-info }
+> Find the script here: [explore.py](https://github.com/MyuWaiShin/Final_Year_Project_2026/blob/main/full_pipeline/explore.py)
 
 `explore.py` finds the object on the table and positions the camera so the object is roughly centred in frame. It does not compute the 3-D pose, that is handled by the next stage `navigate.py`. It only does aruco/object search and hands off to `navigate.py` once the object is found.
 

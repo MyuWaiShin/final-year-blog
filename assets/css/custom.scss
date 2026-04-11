@@ -22,3 +22,12 @@ figure[style*="flex-direction: column"] img {
   margin-right: auto !important;
   display: block !important;
 }
+
+/* Fix for non-square avatar image squishing */
+#sidebar .avatar, 
+#sidebar img.avatar, 
+#sidebar #avatar,
+.avatar {
+  object-fit: cover !important;
+  object-position: center !important;
+}

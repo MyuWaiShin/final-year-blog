@@ -24,10 +24,12 @@ figure[style*="flex-direction: column"] img {
 }
 
 /* Fix for non-square avatar image squishing */
-#sidebar .avatar, 
-#sidebar img.avatar, 
-#sidebar #avatar,
-.avatar {
+#sidebar #avatar img, 
+.profile-wrapper #avatar img,
+.avatar img,
+img#avatar {
   object-fit: cover !important;
   object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
 }

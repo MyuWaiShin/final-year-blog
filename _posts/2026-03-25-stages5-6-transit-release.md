@@ -34,14 +34,16 @@ Transit cannot just blindly drive to the drop zone, the object might slip mid-tr
 
 ### YOLO Classify Monitor
 
-<div style="text-align:center; margin:1.5rem 0;">
-  <video src="{{ '/assets/img/classifier_live_transit.mp4' | relative_url }}"
-    style="width:70%; border-radius:8px; display:inline-block;"
-    autoplay loop muted controls playsinline
-    onended="this.currentTime=0;this.play();">
-  </video>
-  <p style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>YOLO slip monitor detecting object loss during transit</em></p>
-</div>
+<figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
+  <div style="width:80%; position:relative; padding-bottom:45%; height:0; overflow:hidden; border-radius:8px;">
+    <iframe src="https://www.youtube.com/embed/FQ9j3d7ipEk"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>YOLO slip monitor detecting object loss during transit</em></figcaption>
+</figure>
 
 A background thread runs `yolo26n_cls_V1` on live OAK-D camera frames throughout the move. After 3 consecutive `empty` predictions (confidence < 0.90), it sends `stopl()` and triggers recovery.
 

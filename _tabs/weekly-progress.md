@@ -56,7 +56,6 @@ order: 1
   }
 </style>
 
----
 
 ## Browse by Tag
 

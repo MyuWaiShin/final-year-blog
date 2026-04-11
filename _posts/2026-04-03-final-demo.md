@@ -8,7 +8,7 @@ pin: false
 last_modified_at: false
 ---
 
-Full end-to-end demo of the pick-and-place pipeline running autonomously.
+Final demonstration video shows the full autonomous pick-and-place pipeline with integrated failure detection and recovery.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
   <div style="width:80%; position:relative; padding-bottom:45%; height:0; overflow:hidden; border-radius:8px;">
@@ -20,3 +20,6 @@ Full end-to-end demo of the pick-and-place pipeline running autonomously.
   </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Final demo: full autonomous pick-and-place pipeline</em></figcaption>
 </figure>
+
+
+This concludes my final year project. Thank you for following along on this journey.

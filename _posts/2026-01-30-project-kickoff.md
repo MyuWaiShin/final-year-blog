@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with the Niryo NED2"
-date: 2026-01-26 04:17:00 +0000
+date: 2026-01-30 04:17:00 +0000
 categories: [Project Updates, Hardware Testing]
 tags: [niryo, ned2, gripper, calibration]
 author: myuwaishin

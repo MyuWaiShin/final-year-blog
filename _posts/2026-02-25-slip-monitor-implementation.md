@@ -75,11 +75,14 @@ while True:
 
 My laptop's Arduino IDE serial plotter was not available during this test, so I could not view the resistance as a graph but only as raw terminal output. The video below shows the live readings:
 
-<figure style="display:flex; flex-direction:column; align-items:center;">
-  <video width="80%" controls autoplay loop muted playsinline>
-    <source src="/final-year-blog/assets/img/fsr_reading_vid.mp4" type="video/mp4">
-    <p>Video not supported — <a href="/final-year-blog/assets/img/fsr_reading_vid.mp4">click here to download</a>.</p>
-  </video>
+<figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
+  <div style="width:80%; position:relative; padding-bottom:45%; height:0; overflow:hidden; border-radius:8px;">
+    <iframe src="https://www.youtube.com/embed/PLE2mZNFT3w"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>FSR readings showing resistance changes with applied force</em></figcaption>
 </figure>
 

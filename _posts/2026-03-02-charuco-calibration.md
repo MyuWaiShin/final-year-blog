@@ -134,21 +134,15 @@ The previous approach averaged across all five solvers to produce a "mean" resul
 Before running a new calibration session, the existing data collection process was replayed to inspect the quality of the captured poses. The video below shows the replay.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <video id="replay-cali-vid" controls autoplay muted loop playsinline style="width:80%; border-radius:8px;">
-    <source src="/final-year-blog/assets/img/Replay_Cali_1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Replay of calibration data collection (4× speed)</em></figcaption>
+  <div style="width:80%; position:relative; padding-bottom:45%; height:0; overflow:hidden; border-radius:8px;">
+    <iframe src="https://www.youtube.com/embed/9eIAboRm5fE"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Replay of calibration data collection</em></figcaption>
 </figure>
-<script>
-  (function() {
-    var v = document.getElementById('replay-cali-vid');
-    if (v) {
-      v.playbackRate = 4.0;
-      v.addEventListener('loadedmetadata', function() { v.playbackRate = 4.0; });
-    }
-  })();
-</script>
 
 The replay reveals a clear problem: the wrist orientation is not varied enough across collected poses. Throughout the sequence, the robot's wrist remains at nearly the same angle. Because the hand-eye solver solves `AX = XB` using the relative motion between poses, it needs diverse rotations to constrain the rotation component of `X`. When all poses share the same wrist orientation, the rotational input to the solver is nearly degenerate, the rotation matrices `{A_i}` are all similar, giving the solver almost only a few useful signal to separate the camera's rotational offset from the TCP. The result is a poorly conditioned rotation estimate, which is exactly why the calibrated axis directions are still visibly wrong even after the solve.
 

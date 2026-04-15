@@ -52,8 +52,8 @@ From the results, the recall is 100%, meaning every real grasp was correctly ide
 ## Navigation Testing
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <a href="{{ '/assets/img/fig_navigation_(2).png' | relative_url }}" target="_blank" style="width:80%;">
-    <img src="{{ '/assets/img/fig_navigation_(2).png' | relative_url }}" alt="Navigation Workspace" style="width:100%; border-radius:6px;">
+  <a href="{{ '/assets/img/fig_navigation_2.png' | relative_url }}" target="_blank" style="width:80%;">
+    <img src="{{ '/assets/img/fig_navigation_2.png' | relative_url }}" alt="Navigation Workspace" style="width:100%; border-radius:6px;">
   </a>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Navigation test: 6×2 grid at 150 mm pitch, showing hover positions vs target</em></figcaption>
 </figure>

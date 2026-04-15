@@ -42,7 +42,7 @@ After calibration, I tested by moving the robot to an ArUco tag on the workspace
 The calibration estimated a 23° tilt and the camera sitting approximately 8 mm to the right of the TCP centre line. The camera is mounted along the centre of the TCP, so it should not be 8 mm off unless I accidentally shifted off-centre when I designed the mount.
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <img src="/assets/img/cam_position.jpeg" alt="Camera position relative to TCP" style="display:block; margin:0 auto; width:90%; border-radius:4px;" />
+  <img src="/assets/img/wrist_mounted_cam.jpeg" alt="Camera position relative to TCP" style="display:block; margin:0 auto; width:90%; border-radius:4px;" />
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Camera position relative to TCP</em></figcaption>
 </figure>
 

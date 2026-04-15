@@ -26,16 +26,20 @@ For the binary classifier, I tested it with 50 random positions in the workspace
 | Actual EMPTY | 4 (FP) | 23 (TN) |
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <a href="{{ '/assets/img/classifier_confusion_matrix.png' | relative_url }}" target="_blank" style="width:80%;">
-    <img src="{{ '/assets/img/classifier_confusion_matrix.png' | relative_url }}" alt="Classifier Confusion Matrix" style="width:100%; border-radius:6px;">
-  </a>
+  <div style="width:80%; overflow:hidden; border-radius:8px;">
+    <a href="/assets/img/classifier_confusion_matrix.png" target="_blank">
+      <img src="/assets/img/classifier_confusion_matrix.png" alt="Classifier Confusion Matrix" style="width:100%; border-radius:6px;">
+    </a>
+  </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Confusion matrix (n = 50)</em></figcaption>
 </figure>
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <a href="{{ '/assets/img/tcp_height_vs_accuracy.png' | relative_url }}" target="_blank" style="width:80%;">
-    <img src="{{ '/assets/img/tcp_height_vs_accuracy.png' | relative_url }}" alt="TCP Height vs Accuracy" style="width:100%; border-radius:6px;">
-  </a>
+  <div style="width:80%; overflow:hidden; border-radius:8px;">
+    <a href="/assets/img/tcp_height_vs_accuracy.png" target="_blank">
+      <img src="/assets/img/tcp_height_vs_accuracy.png" alt="TCP Height vs Accuracy" style="width:100%; border-radius:6px;">
+    </a>
+  </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Accuracy vs TCP height (mm)</em></figcaption>
 </figure>
 
@@ -52,9 +56,11 @@ From the results, the recall is 100%, meaning every real grasp was correctly ide
 ## Navigation Testing
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <a href="{{ '/assets/img/fig_navigation_2.png' | relative_url }}" target="_blank" style="width:80%;">
-    <img src="{{ '/assets/img/fig_navigation_2.png' | relative_url }}" alt="Navigation Workspace" style="width:100%; border-radius:6px;">
-  </a>
+  <div style="width:80%; overflow:hidden; border-radius:8px;">
+    <a href="/assets/img/fig_navigation_2.png" target="_blank">
+      <img src="/assets/img/fig_navigation_2.png" alt="Navigation Workspace" style="width:100%; border-radius:6px;">
+    </a>
+  </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Navigation test: 6×2 grid at 150 mm pitch, showing hover positions vs target</em></figcaption>
 </figure>
 
@@ -72,9 +78,11 @@ For the navigation system, I tested it with a 6×2 grid at 150 mm pitch. 11 of 1
 ## Recovery Testing
 
 <figure style="display:flex; flex-direction:column; align-items:center; margin:1.5rem 0;">
-  <a href="{{ '/assets/img/fig_recovery.png' | relative_url }}" target="_blank" style="width:80%;">
-    <img src="{{ '/assets/img/fig_recovery.png' | relative_url }}" alt="Recovery Workspace" style="width:100%; border-radius:6px;">
-  </a>
+  <div style="width:80%; overflow:hidden; border-radius:8px;">
+    <a href="/assets/img/fig_recovery.png" target="_blank">
+      <img src="/assets/img/fig_recovery.png" alt="Recovery Workspace" style="width:100%; border-radius:6px;">
+    </a>
+  </div>
   <figcaption style="font-size:0.85rem; color:#666; margin-top:0.4rem;"><em>Recovery test: 14 random positions across the workspace</em></figcaption>
 </figure>
 

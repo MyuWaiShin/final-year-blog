@@ -12,7 +12,7 @@ This page provides an overview of the technical report, which documents the desi
 
 Find the technical report below:
 
-> [Technical Report on Failure Detection and Recovery in Robotic Arm Pick-and-Place System PDF](/final-year-blog/assets/files/Technical%20Report_Myu_M00964135.pdf)  
+> [Technical Report on Failure Detection and Recovery in Robotic Arm Pick-and-Place System PDF](https://1drv.ms/b/c/4543b91bdec2fa57/IQDyrMlXL9WvTostCgzS7sBeAT9ytM7OswPYMdmN4Izg5B0?email=myuwaishin10%40gmail.com&e=eJ7ecy)  
 {: .prompt-info }
 
 ---

@@ -12,7 +12,7 @@ This page provides an overview of the technical report, which documents the desi
 
 Find the technical report below:
 
-> [Technical Report on Grasp Failure Detection and Recovery in Robotic Arm Pick-and-Place PDF](https://1drv.ms/b/c/4543b91bdec2fa57/IQACwYxsodezSJkvHzEDi1lzASCqsxWJ4xZf7sU_oLUexuU?email=ms3433%40live.mdx.ac.uk&e=EjldS4)  
+> [FYP Technical Report PDF](https://1drv.ms/b/c/4543b91bdec2fa57/IQACwYxsodezSJkvHzEDi1lzARE01ylpXtb86x-XuY6LcPw?email=myuwaishin10%40gmail.com&e=5P5TyT)  
 {: .prompt-info }
 
 ---

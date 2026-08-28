@@ -12,14 +12,14 @@ This page provides an overview of the technical report, which documents the desi
 
 Find the technical report below:
 
-> [Technical Report on Failure Detection and Recovery in Robotic Arm Grasp PDF](https://1drv.ms/b/c/4543b91bdec2fa57/IQDyrMlXL9WvTostCgzS7sBeAT9ytM7OswPYMdmN4Izg5B0?email=myuwaishin10%40gmail.com&e=eJ7ecy)  
+> [Technical Report on Grasp Failure Detection and Recovery in Robotic Arm Pick-and-Place PDF](https://1drv.ms/b/c/4543b91bdec2fa57/IQACwYxsodezSJkvHzEDi1lzASCqsxWJ4xZf7sU_oLUexuU?email=ms3433%40live.mdx.ac.uk&e=EjldS4)  
 {: .prompt-info }
 
 ---
 
 ### Project Overview
 
-**Title:** Failure Detection and Recovery in Robotic Arm Grasp  
+**Title:** Grasp Failure Detection and Recovery in Robotic Arm Pick-and-Place  
 **Programme:** BEng Mechatronics and Robotics, Major Project (PDE3823)  
 **Institution:** Middlesex University London  
 **Academic Year:** 2025 - 2026
